@@ -1,0 +1,174 @@
+.gallery {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(160px, 1fr);
+  gap: 3px;
+  height: 220px;
+  overflow-x: auto;
+}
+
+.galleryPane {
+  min-width: 160px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.headRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+  margin-bottom: 4px;
+}
+
+.address {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: 2px;
+}
+
+.meta {
+  font-size: 0.875rem;
+  color: var(--color-taupe);
+}
+
+.ratingBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.ratingValue {
+  font-weight: 700;
+  color: var(--color-charcoal);
+  font-size: 0.9375rem;
+}
+
+.ratingCount {
+  font-size: 0.75rem;
+  color: var(--color-taupe);
+}
+
+.description {
+  font-size: 0.9375rem;
+  color: var(--color-charcoal);
+  line-height: 1.7;
+}
+
+.amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.amenity {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  background: var(--color-neutral);
+  border: 1px solid var(--color-neutral-dark);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.875rem;
+  color: var(--color-charcoal);
+}
+
+.details strong {
+  font-weight: 600;
+}
+
+.owner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-neutral-dark);
+  padding-top: var(--space-4);
+}
+
+.ownerAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ownerName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.ownerEmail {
+  font-size: 0.8125rem;
+  color: var(--color-taupe);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  border-top: 1px solid var(--color-neutral-dark);
+  padding-top: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.priceSub {
+  font-size: 0.8125rem;
+  color: var(--color-taupe);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions > * {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,26 @@
+.resultsLine {
+  padding-top: var(--space-6);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-taupe);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.configError {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.configError code {
+  font-family: var(--font-mono);
+  background: var(--color-neutral);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}

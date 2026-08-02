@@ -1,0 +1,43 @@
+.topBar {
+  border-bottom: 1px solid var(--color-neutral-dark);
+  padding: 16px 0;
+}
+
+.topBarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  letter-spacing: -0.02em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logoMark {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-taupe);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.actionBtn:hover {
+  color: var(--color-charcoal);
+}

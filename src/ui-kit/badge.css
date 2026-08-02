@@ -1,0 +1,30 @@
+.nk-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.3125rem 0.75rem;
+  border-radius: var(--radius-pill);
+  line-height: 1;
+}
+
+.nk-badge--default {
+  background-color: var(--color-neutral);
+  color: var(--color-taupe);
+  border: 1px solid var(--color-neutral-dark);
+}
+
+.nk-badge--accent {
+  background-color: rgba(156, 62, 31, 0.1);
+  color: var(--color-brick);
+  border: 1px solid rgba(156, 62, 31, 0.2);
+}
+
+.nk-badge--dark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(250, 246, 241, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}

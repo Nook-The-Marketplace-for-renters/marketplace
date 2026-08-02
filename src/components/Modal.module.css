@@ -1,0 +1,57 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 27, 24, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+.overlayTop {
+  align-items: flex-start;
+  padding: var(--space-8) var(--space-4);
+  overflow-y: auto;
+}
+
+.panel {
+  position: relative;
+  width: 100%;
+  background: var(--color-warm-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card-hover);
+  overflow: hidden;
+}
+
+.panelPadded {
+  padding: var(--space-8) var(--space-6) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.overlayTop .panel {
+  margin-block: auto;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-neutral);
+  color: var(--color-charcoal);
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtnFloating {
+  background: rgba(250, 246, 241, 0.9);
+}

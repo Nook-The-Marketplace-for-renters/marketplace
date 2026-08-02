@@ -1,0 +1,3 @@
+/* Shared design tokens, reset, and layout utilities — copied from the
+   nook-ui-kit template. Keep app-specific overrides below the import. */
+@import './ui-kit/tokens.css';

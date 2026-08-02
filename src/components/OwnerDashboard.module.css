@@ -1,0 +1,171 @@
+.page {
+  min-height: 100vh;
+  background: var(--color-warm-white);
+}
+
+.content {
+  padding-block: var(--space-10) var(--space-16);
+}
+
+.headRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-10);
+}
+
+.signedInAs {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-taupe);
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-taupe);
+  margin-top: 4px;
+}
+
+.headActions {
+  display: flex;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.empty {
+  font-size: 0.9375rem;
+  color: var(--color-taupe);
+  padding-block: var(--space-10);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.card {
+  border: 1px solid var(--color-neutral-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  background: var(--color-warm-white);
+}
+
+.cardMain {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.thumb {
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.deleteBtn {
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-taupe);
+  background: none;
+  border: 1.5px solid var(--color-neutral-dark);
+  border-radius: var(--radius-pill);
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.deleteBtn:hover {
+  color: var(--color-brick);
+  border-color: var(--color-brick);
+}
+
+.cardTitle {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.cardMeta {
+  font-size: 0.875rem;
+  color: var(--color-taupe);
+}
+
+.leadCount {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-brick);
+  margin-top: 2px;
+}
+
+.leadList {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-neutral-dark);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lead {
+  background: var(--color-neutral);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.leadHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.leadName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.leadDate {
+  font-size: 0.75rem;
+  color: var(--color-taupe);
+}
+
+.leadEmail {
+  font-size: 0.8125rem;
+  color: var(--color-taupe);
+}
+
+.leadMessage {
+  font-size: 0.8125rem;
+  color: var(--color-charcoal);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+  .cardMain {
+    align-items: flex-start;
+  }
+}
