@@ -1,4 +1,5 @@
 import styles from './MinimalTopBar.module.css';
+import { Logo } from '@/components/Logo';
 
 interface MinimalTopBarProps {
   onLogoClick?: () => void;
@@ -13,8 +14,7 @@ export function MinimalTopBar({ onLogoClick, actionLabel, onAction }: MinimalTop
     <header className={styles.topBar}>
       <div className={`${styles.topBarInner} container`}>
         <LogoTag className={styles.logo} onClick={onLogoClick}>
-          <img src="/favicon.svg" className={styles.logoMark} alt="" aria-hidden="true" />
-          Nook
+          <Logo className={styles.logoMark} />
         </LogoTag>
         <button className={styles.actionBtn} onClick={onAction}>
           {actionLabel}

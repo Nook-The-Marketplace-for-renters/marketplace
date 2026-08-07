@@ -1,19 +1,19 @@
 /* ============================================================
-   NOOK UI KIT — DESIGN TOKENS
-   Shared visual language: warm neutrals, one brick-red accent,
-   soft cards, pill controls. Import once per app, before any
-   component CSS.
+   LOUA UI KIT — DESIGN TOKENS
+   Shared visual language: deep forest green, warm cream, and a
+   terracotta-orange accent. Soft cards, pill controls. Import
+   once per app, before any component CSS.
    ============================================================ */
 :root {
   /* Colors */
-  --color-brick: #9c3e1f;
-  --color-brick-dark: #7d3118;
-  --color-charcoal: #1f1b18;
-  --color-charcoal-soft: #2c2723;
-  --color-warm-white: #faf6f1;
-  --color-taupe: #8a8178;
-  --color-neutral: #efe8df;
-  --color-neutral-dark: #e0d5c8;
+  --color-brick: #c1552f;
+  --color-brick-dark: #9f4526;
+  --color-charcoal: #15332a;
+  --color-charcoal-soft: #1f473a;
+  --color-warm-white: #ffffff;
+  --color-taupe: #7a8880;
+  --color-neutral: #e8ece7;
+  --color-neutral-dark: #d3dbd1;
 
   /* Typography */
   --font-sans: 'Work Sans', system-ui, sans-serif;
@@ -47,9 +47,9 @@
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-card: 0 4px 24px rgba(31, 27, 24, 0.08);
-  --shadow-card-hover: 0 8px 40px rgba(31, 27, 24, 0.14);
-  --shadow-phone: 28px 40px 80px rgba(31, 27, 24, 0.2);
+  --shadow-card: 0 4px 24px rgba(21, 51, 42, 0.08);
+  --shadow-card-hover: 0 8px 40px rgba(21, 51, 42, 0.14);
+  --shadow-phone: 28px 40px 80px rgba(21, 51, 42, 0.2);
 
   /* Layout */
   --max-width: 1140px;

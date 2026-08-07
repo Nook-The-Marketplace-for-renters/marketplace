@@ -29,12 +29,12 @@
 .nk-btn--primary {
   background-color: var(--color-brick);
   color: var(--color-warm-white);
-  box-shadow: 0 2px 12px rgba(156, 62, 31, 0.28);
+  box-shadow: 0 2px 12px rgba(193, 85, 47, 0.28);
 }
 
 .nk-btn--primary:hover {
   background-color: var(--color-brick-dark);
-  box-shadow: 0 4px 20px rgba(156, 62, 31, 0.38);
+  box-shadow: 0 4px 20px rgba(193, 85, 47, 0.38);
   transform: translateY(-1px);
 }
 

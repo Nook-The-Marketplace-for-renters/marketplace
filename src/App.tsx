@@ -45,8 +45,8 @@ export function App() {
   // A "list your property" click before sign-in stashes intent so an OAuth
   // redirect round-trip still lands back on the onboarding wizard.
   useEffect(() => {
-    if (user && window.sessionStorage.getItem('nook-oauth-intent') === 'onboarding') {
-      window.sessionStorage.removeItem('nook-oauth-intent');
+    if (user && window.sessionStorage.getItem('loua-oauth-intent') === 'onboarding') {
+      window.sessionStorage.removeItem('loua-oauth-intent');
       setView('onboarding');
     }
   }, [user]);

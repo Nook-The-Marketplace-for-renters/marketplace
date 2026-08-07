@@ -103,7 +103,7 @@ export interface LocaleContent {
 export const translations: Record<Locale, LocaleContent> = {
   en: {
     header: {
-      homeAria: 'Nook Rental home',
+      homeAria: 'Loua Rental home',
       tagline: 'Rental',
       searchPlaceholder: 'Search by neighbourhood or listing',
       searchAria: 'Search listings',
@@ -229,7 +229,7 @@ export const translations: Record<Locale, LocaleContent> = {
   },
   fr: {
     header: {
-      homeAria: 'Accueil Nook Rental',
+      homeAria: 'Accueil Loua Rental',
       tagline: 'Location',
       searchPlaceholder: 'Rechercher par quartier ou annonce',
       searchAria: 'Rechercher des annonces',

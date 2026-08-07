@@ -1,7 +1,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(31, 27, 24, 0.55);
+  background: rgba(21, 51, 42, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,5 +53,5 @@
 }
 
 .closeBtnFloating {
-  background: rgba(250, 246, 241, 0.9);
+  background: rgba(255, 255, 255, 0.9);
 }

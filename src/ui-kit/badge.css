@@ -18,13 +18,13 @@
 }
 
 .nk-badge--accent {
-  background-color: rgba(156, 62, 31, 0.1);
+  background-color: rgba(193, 85, 47, 0.1);
   color: var(--color-brick);
-  border: 1px solid rgba(156, 62, 31, 0.2);
+  border: 1px solid rgba(193, 85, 47, 0.2);
 }
 
 .nk-badge--dark {
   background-color: rgba(255, 255, 255, 0.1);
-  color: rgba(250, 246, 241, 0.7);
+  color: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.15);
 }

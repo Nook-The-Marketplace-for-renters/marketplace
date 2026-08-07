@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { translations } from './translations';
 import type { Locale, LocaleContent } from './translations';
 
-const STORAGE_KEY = 'nook-marketplace-language';
+const STORAGE_KEY = 'loua-marketplace-language';
 
 interface LanguageContextValue {
   language: Locale;

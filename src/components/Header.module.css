@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(250, 246, 241, 0.94);
+  background-color: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-neutral-dark);
@@ -27,7 +27,7 @@
 }
 
 .logoMark {
-  width: 26px;
+  width: auto;
   height: 26px;
   flex-shrink: 0;
 }

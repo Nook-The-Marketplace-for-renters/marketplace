@@ -24,7 +24,7 @@ export function AuthGate({ onAuthenticated, onCancel }: AuthGateProps) {
   async function handleOAuth(provider: 'google' | 'apple') {
     setError('');
     try {
-      window.sessionStorage.setItem('nook-oauth-intent', 'onboarding');
+      window.sessionStorage.setItem('loua-oauth-intent', 'onboarding');
       await signInWithOAuth(provider);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Sign-in failed. Try again.');

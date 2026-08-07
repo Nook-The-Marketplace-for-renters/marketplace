@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Header.module.css';
 import { Button } from '@/ui-kit';
+import { Logo } from '@/components/Logo';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 interface HeaderProps {
@@ -100,10 +101,8 @@ export function Header({ query, onQueryChange, onListProperty, isSignedIn, onMyL
     <header className={styles.header}>
       <div className={`${styles.inner} container`}>
         <a href="#" className={styles.logo} aria-label={t.header.homeAria}>
-          <img src="/favicon.svg" className={styles.logoMark} alt="" aria-hidden="true" />
-          <span>
-            Nook<span className={styles.logoSub}>{t.header.tagline}</span>
-          </span>
+          <Logo className={styles.logoMark} />
+          <span className={styles.logoSub}>{t.header.tagline}</span>
         </a>
 
         <div className={styles.searchBar}>
