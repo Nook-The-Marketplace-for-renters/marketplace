@@ -14,6 +14,10 @@ export interface LocaleContent {
     accountMenu: string;
   };
   filters: Record<string, string>;
+  filterBar: {
+    label: string;
+    all: string;
+  };
   results: (count: number) => string;
   card: {
     bath: string;
@@ -38,6 +42,15 @@ export interface LocaleContent {
   };
   tags: Record<string, string>;
   propertyTypes: Record<PropertyType, string>;
+  louai: {
+    askAbout: (address: string) => string;
+    placeholder: string;
+    send: string;
+    thinking: string;
+    error: string;
+    sampleListing: string;
+    close: string;
+  };
   request: {
     title: string;
     name: string;
@@ -125,6 +138,10 @@ export const translations: Record<Locale, LocaleContent> = {
       parking: 'Parking',
       budget: 'Under $1,500',
     },
+    filterBar: {
+      label: 'Filters',
+      all: 'All listings',
+    },
     results: (count) => `${count} rental${count === 1 ? '' : 's'} in Montreal`,
     card: {
       bath: 'bath',
@@ -144,7 +161,7 @@ export const translations: Record<Locale, LocaleContent> = {
       leaseTerm: 'Lease term:',
       hostedBy: 'Hosted by',
       perMonth: 'per month',
-      askAI: 'Ask the AI',
+      askAI: 'Ask LouAI',
       sendRequest: 'Send a request',
     },
     tags: {
@@ -165,6 +182,15 @@ export const translations: Record<Locale, LocaleContent> = {
       Loft: 'Loft',
       House: 'House',
       Studio: 'Studio',
+    },
+    louai: {
+      askAbout: (address) => `Ask about ${address}`,
+      placeholder: 'Ask anything about this listing…',
+      send: 'Send',
+      thinking: 'LouAI is looking…',
+      error: "LouAI couldn't answer that — try again in a moment.",
+      sampleListing: "This is a sample listing, not yet saved to the database, so LouAI has nothing to search here. Try this on a real listing instead.",
+      close: 'Close chat',
     },
     request: {
       title: 'Send a request',
@@ -251,6 +277,10 @@ export const translations: Record<Locale, LocaleContent> = {
       parking: 'Stationnement',
       budget: 'Moins de 1 500 $',
     },
+    filterBar: {
+      label: 'Filtres',
+      all: 'Toutes les annonces',
+    },
     results: (count) => `${count} logement${count === 1 ? '' : 's'} à Montréal`,
     card: {
       bath: 'sdb',
@@ -270,7 +300,7 @@ export const translations: Record<Locale, LocaleContent> = {
       leaseTerm: 'Durée du bail :',
       hostedBy: 'Publié par',
       perMonth: 'par mois',
-      askAI: "Demander à l'IA",
+      askAI: 'Demander à LouAI',
       sendRequest: 'Envoyer une demande',
     },
     tags: {
@@ -291,6 +321,16 @@ export const translations: Record<Locale, LocaleContent> = {
       Loft: 'Loft',
       House: 'Maison',
       Studio: 'Studio',
+    },
+    louai: {
+      askAbout: (address) => `Demander à propos de ${address}`,
+      placeholder: 'Posez une question sur cette annonce…',
+      send: 'Envoyer',
+      thinking: 'LouAI cherche…',
+      error: "LouAI n'a pas pu répondre — réessayez dans un instant.",
+      sampleListing:
+        "Ceci est une annonce d'exemple, pas encore enregistrée dans la base de données, donc LouAI n'a rien à y chercher. Essayez plutôt avec une vraie annonce.",
+      close: 'Fermer le clavardage',
     },
     request: {
       title: 'Envoyer une demande',

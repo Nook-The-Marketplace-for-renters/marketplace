@@ -25,7 +25,11 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       // No profile row (e.g. this account signed up before the auto-create
       // trigger existed) — create one now instead of leaving the account stuck.
       p = await upsertOwnProfile(sessionUser.id, {
-        name: (sessionUser.user_metadata?.name as string | undefined) ?? sessionUser.email ?? 'Owner',
+        name:
+          (sessionUser.user_metadata?.name as string | undefined) ??
+          (sessionUser.user_metadata?.full_name as string | undefined) ??
+          sessionUser.email ??
+          'Owner',
         email: sessionUser.email ?? '',
         picture: sessionUser.user_metadata?.picture as string | undefined,
       });
