@@ -1,0 +1,225 @@
+.panel {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  z-index: 350;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-warm-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card-hover);
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .panel {
+    right: var(--space-4);
+    bottom: var(--space-4);
+    width: calc(100vw - 2 * var(--space-4)) !important;
+    max-height: calc(100vh - 2 * var(--space-4)) !important;
+  }
+
+  .resizeHandle {
+    display: none;
+  }
+}
+
+.resizeHandle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: nwse-resize;
+  touch-action: none;
+  color: var(--color-taupe);
+  background: var(--color-neutral);
+  border-bottom-right-radius: var(--radius-md);
+  font-size: 0.75rem;
+  line-height: 1;
+  user-select: none;
+  z-index: 2;
+}
+
+.resizeHandle:hover {
+  color: var(--color-charcoal);
+  background: var(--color-neutral-dark);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  background: var(--color-neutral);
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 0;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-brick);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.aiBadge {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-charcoal);
+  color: var(--color-warm-white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.aiBadge:hover {
+  background: var(--color-charcoal-soft);
+}
+
+.thread {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.messageBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.bubbleUser,
+.bubbleAssistant {
+  padding: 0.75rem 1.125rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  max-width: 85%;
+}
+
+.bubbleUser {
+  align-self: flex-end;
+  background: var(--color-charcoal);
+  color: var(--color-warm-white);
+}
+
+.bubbleAssistant {
+  align-self: flex-start;
+  background: var(--color-neutral);
+  color: var(--color-charcoal);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.assistantLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-brick);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  padding-left: var(--space-2);
+}
+
+.dotActive,
+.dotInactive {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.dotActive {
+  background: var(--color-brick);
+}
+
+.dotInactive {
+  background: var(--color-neutral-dark);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  padding: 0.75rem 1.125rem;
+  border: 1.5px solid var(--color-neutral-dark);
+  border-radius: var(--radius-pill);
+  background: var(--color-warm-white);
+  color: var(--color-charcoal);
+  font-size: 0.9375rem;
+  font-family: var(--font-sans);
+  outline: none;
+  min-width: 0;
+}
+
+.input:focus {
+  border-color: var(--color-charcoal);
+}
+
+.sendBtn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-brick);
+  color: var(--color-warm-white);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: var(--color-brick-dark);
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

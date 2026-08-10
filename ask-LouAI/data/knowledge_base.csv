@@ -1,0 +1,14 @@
+field,questions,answer_template,requires
+greeting,"Hello|Hi|Hey|Hi there|Hello there|Good morning|Good afternoon|Good evening|What's up","Hi! I'm LouAI. Ask me anything about this listing — price, address, pet policy, lease term, amenities, and more.",
+farewell,"Thanks|Thank you|Thanks a lot|That's all for now|Bye|Goodbye","You're welcome! Feel free to come back anytime you have more questions about this listing.",
+title,"What's this listing called?|What's the title of this listing?|What's it named?","This listing is titled ""{title}"".",
+location,"What's the address?|Where is it located?|What neighbourhood is it in?|Where is this listing?","It's located at {address}, in the {neighbourhood} neighbourhood.",
+type_and_size,"What type of unit is it?|Is it an apartment or a house?|How many bathrooms does it have?|What's the unit size?","It's a {type} with unit size {unit_size} and {baths} bathroom(s).",
+sqft,"How many square feet is it?|What's the square footage?|How big is it in square feet?","It's about {sqft} sq ft.",sqft
+price,"How much is rent?|What's the monthly rent?|What's the price?|How much does it cost per month?","Rent is ${price_monthly} per month.",
+availability,"When is it available?|What's the move-in date?|When can I move in?","Availability: {available}.",
+pet_policy,"Are pets allowed?|What's the pet policy?|Can I have a dog?|Can I have a cat?","Pet policy: {pet_policy}",pet_policy
+lease_term,"What's the lease term?|How long is the lease?|Is it a 12 month lease?","Lease term: {lease_term}",lease_term
+tags,"What amenities does it have?|What features does it have?|Does it have laundry?","Amenities and tags: {tags}.",tags
+rating,"What's the rating?|How many reviews does it have?|Is it well reviewed?","This listing has a rating of {rating} from {reviews} review(s).",reviews
+description,"Tell me about this listing.|Can you describe it?|What's it like?|Give me an overview.","{description}",

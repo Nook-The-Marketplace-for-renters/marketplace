@@ -3,6 +3,7 @@ import styles from './ListingDetail.module.css';
 import { ListingPhotoView } from './ListingPhotoView';
 import { LocationMap } from './LocationMap';
 import { SendRequestModal } from './SendRequestModal';
+import { AskLouAiPanel } from './AskLouAiPanel';
 import { Modal } from './Modal';
 import { Button, Badge } from '@/ui-kit';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -17,6 +18,7 @@ interface ListingDetailProps {
 export function ListingDetail({ listing, onClose, onSendRequest }: ListingDetailProps) {
   const { t } = useLanguage();
   const [requestOpen, setRequestOpen] = useState(false);
+  const [askAiOpen, setAskAiOpen] = useState(false);
 
   return (
     <>
@@ -109,7 +111,7 @@ export function ListingDetail({ listing, onClose, onSendRequest }: ListingDetail
               </span>
             </div>
             <div className={styles.actions}>
-              <Button variant="outline" size="md">
+              <Button variant="outline" size="md" onClick={() => setAskAiOpen(true)}>
                 {t.detail.askAI}
               </Button>
               <Button variant="primary" size="md" onClick={() => setRequestOpen(true)}>
@@ -126,6 +128,10 @@ export function ListingDetail({ listing, onClose, onSendRequest }: ListingDetail
           onClose={() => setRequestOpen(false)}
           onSubmit={(lead) => onSendRequest(listing.id, lead)}
         />
+      )}
+
+      {askAiOpen && (
+        <AskLouAiPanel listingId={listing.id} listingAddress={listing.address} onClose={() => setAskAiOpen(false)} />
       )}
     </>
   );

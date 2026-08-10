@@ -68,14 +68,37 @@ export function App() {
   // applied yet), stop spinning silently and say so after a few seconds.
   const [profileTimedOut, setProfileTimedOut] = useState(false);
 
+  const profileGatedView = view === 'dashboard' || view === 'onboarding';
+
   useEffect(() => {
-    if (view !== 'dashboard' || profile) {
+    if (!profileGatedView || profile) {
       setProfileTimedOut(false);
       return;
     }
     const timer = setTimeout(() => setProfileTimedOut(true), 4000);
     return () => clearTimeout(timer);
-  }, [view, profile]);
+  }, [profileGatedView, profile]);
+
+  function renderProfileLoading() {
+    return (
+      <div className={styles.configError}>
+        {profileTimedOut ? (
+          <>
+            <h1>Couldn't load your account</h1>
+            <p>
+              This usually means the database schema hasn't been applied yet — run{' '}
+              <code>supabase/schema.sql</code> in your Supabase project's SQL Editor.
+            </p>
+            <Button variant="outline" size="md" onClick={() => setView('browse')}>
+              Back to marketplace
+            </Button>
+          </>
+        ) : (
+          <p>Loading your account…</p>
+        )}
+      </div>
+    );
+  }
 
   const filtered = useMemo(() => {
     const filterDef = FILTERS.find((f) => f.id === activeFilter);
@@ -104,6 +127,10 @@ export function App() {
 
   function toggleFilter(id: string) {
     setActiveFilter((prev) => (prev === id ? null : id));
+  }
+
+  function clearFilter() {
+    setActiveFilter(null);
   }
 
   function handlePublished(listing: Listing) {
@@ -159,7 +186,7 @@ export function App() {
           onMyListings={() => setView('dashboard')}
           onSignOut={handleSignOut}
         />
-        <FilterBar active={activeFilter} onToggle={toggleFilter} />
+        <FilterBar active={activeFilter} onToggle={toggleFilter} onClear={clearFilter} />
         <AuthGate onAuthenticated={() => setView('onboarding')} onCancel={() => setView('browse')} />
       </>
     );
@@ -167,21 +194,23 @@ export function App() {
 
   if (view === 'onboarding') {
     if (sessionLoading || !user) return null;
+    // Wait for the profile to load before mounting the form: OwnerOnboarding
+    // seeds its draft state from initialOwner only once, on mount, so
+    // rendering it early (with initialOwner still undefined) would leave the
+    // read-only email field permanently blank — which fails step 1's
+    // validation and makes "Continue" un-clickable for good.
+    if (!profile) return renderProfileLoading();
     return (
       <OwnerOnboarding
         ownerId={user.id}
         onPublish={handlePublished}
         onExit={() => setView('browse')}
-        initialOwner={
-          profile
-            ? {
-                ownerName: profile.name,
-                ownerEmail: profile.email,
-                ownerPhone: profile.phone ?? '',
-                ownerPicture: profile.picture ?? '',
-              }
-            : undefined
-        }
+        initialOwner={{
+          ownerName: profile.name,
+          ownerEmail: profile.email,
+          ownerPhone: profile.phone ?? '',
+          ownerPicture: profile.picture ?? '',
+        }}
       />
     );
   }
@@ -204,26 +233,7 @@ export function App() {
         </>
       );
     }
-    if (!profile) {
-      return (
-        <div className={styles.configError}>
-          {profileTimedOut ? (
-            <>
-              <h1>Couldn't load your account</h1>
-              <p>
-                This usually means the database schema hasn't been applied yet — run{' '}
-                <code>supabase/schema.sql</code> in your Supabase project's SQL Editor.
-              </p>
-              <Button variant="outline" size="md" onClick={() => setView('browse')}>
-                Back to marketplace
-              </Button>
-            </>
-          ) : (
-            <p>Loading your account…</p>
-          )}
-        </div>
-      );
-    }
+    if (!profile) return renderProfileLoading();
     return (
       <OwnerDashboard
         ownerName={profile.name}
@@ -247,7 +257,7 @@ export function App() {
         onMyListings={() => setView('dashboard')}
         onSignOut={handleSignOut}
       />
-      <FilterBar active={activeFilter} onToggle={toggleFilter} />
+      <FilterBar active={activeFilter} onToggle={toggleFilter} onClear={clearFilter} />
       <main>
         <div className={`${styles.resultsLine} container`}>
           {t.results(filtered.length)}
