@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/welcome", "destination": "https://loua-landing-page-release.vercel.app/welcome" },
-    { "source": "/welcome/:path*", "destination": "https://loua-landing-page-release.vercel.app/welcome/:path*" }
+    { "source": "/welcome", "destination": "https://nook-landing-page-release.vercel.app/welcome" },
+    { "source": "/welcome/:path*", "destination": "https://nook-landing-page-release.vercel.app/welcome/:path*" }
   ]
 }
